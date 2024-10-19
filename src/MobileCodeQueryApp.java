@@ -33,7 +33,7 @@ public class MobileCodeQueryApp extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String mobileCode = mobileTextField.getText().trim();
                 if (mobileCode.length() >= 7) {
-                    String result = getMobileCodeInfo(mobileCode);
+                    String result = getMobilePhoneInfo(mobileCode);
                     resultTextArea.setText(result);
                 } else {
                     JOptionPane.showMessageDialog(MobileCodeQueryApp.this, "请输入有效的手机号码（至少7位）", "错误", JOptionPane.ERROR_MESSAGE);
@@ -51,7 +51,7 @@ public class MobileCodeQueryApp extends JFrame {
         add(panel);
     }
 
-    private String getMobileCodeInfo(String mobileCode) {
+    private String getMobilePhoneInfo(String mobileCode) {
         try {
             // 创建 Web Service 客户端对象
             MobileCodeWS service = new MobileCodeWS();
